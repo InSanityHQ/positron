@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "allowJs": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "target": "es5",
+    "rootDir":"api",
+    "outDir": "dist/"
+  },
+  "include": [
+    "api/**/*.ts"
+  ]
+}
