@@ -6,24 +6,27 @@ typedef enum {
     INTERGER,
     FLOATING_POINT,
     STRING
-} ShitArrayTypes;
+} SoytypeCompatibles;
 
-class ShitArray {
+class Soytype {
     public:
-        std::vector<std::tuple<int, float, std::string>> elemVector;
-        std::vector<ShitArrayTypes> types;
+        int intStore;
+        float floatStore;
+        std::string stringStore;
+
+        SoytypeCompatibles typeCompatInfo;
 
         template<typename T>
-        void append(T content) {
-            int * int_cast_value = dynamic_cast<int*>(content);
-            if (int_cast_value != nullptr) 
-                return elemVector.push_back(std::make_tuple(*int_cast_value, -1.0, "")),
-                       types.push_back(INTERGER);
-
-            float * float_cast_value = dynamic_cast<float*>(content);
-            if (float_cast_value != nullptr) 
-                return elemVector.push_back(std::make_tuple(-1, *float_cast_value, "")),
-                       types.push_back(FLOATING_POINT);
-        }
+        Soytype(T data) {
+            if (std::is_same<T, int>::value)
+                intStore=data;
+            else if (std::is_same<T, int>::value)
+                return floatStore=data;
+        };
 };
+
+int main() {
+    Soytype hewo = Soytype(12);
+}
+
 
