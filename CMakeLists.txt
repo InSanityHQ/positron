@@ -21,7 +21,7 @@ add_executable(surf
     surf/surf.c 
     surf/webext-surf.c)
 
-target_include_directories(surf PUBLIC PkgConfig::PKGDEPDS ".")
+target_include_directories(surf PUBLIC PkgConfig::PKGDEPDS)
 target_link_libraries(surf PUBLIC PkgConfig::PKGDEPDS)
 target_compile_definitions(surf PUBLIC 
     VERSION="${SURF_VERSION}" 
