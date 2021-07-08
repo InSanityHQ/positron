@@ -23,5 +23,7 @@ add_executable(surf
 
 target_include_directories(surf PUBLIC PkgConfig::PKGDEPDS ".")
 target_link_libraries(surf PUBLIC PkgConfig::PKGDEPDS)
-target_compile_definitions(surf PUBLIC VERSION="${SURF_VERSION}")
+target_compile_definitions(surf PUBLIC 
+    VERSION="${SURF_VERSION}" 
+    GCR_API_SUBJECT_TO_CHANGE)
 
