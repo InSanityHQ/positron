@@ -30,12 +30,11 @@ target_compile_definitions(surf PUBLIC
 
 
 file(GLOB_RECURSE POSITRON_SRCS src/*.cpp)
-file(GLOB_RECURSE POSITRON_HDRS include/*.hpp)
 
 add_library(positron STATIC
     ${POSITRON_SRCS})
 
-target_include_directories(positron PRIVATE ${POSITRON_HDRS})
+target_include_directories(positron PRIVATE include)
 target_link_libraries(positron surf)
 
 
