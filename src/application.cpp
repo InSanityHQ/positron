@@ -1,8 +1,19 @@
+#include <string>
+
 #include "../include/application.hpp"
 
 PApplication::PApplication(const char *name) 
     : name(name) 
 {
+    // TODO BAD(ish)! non unix-like?
+    std::string prefix = "~/."+std::string(name)+"/";
+
+    scriptfile = (char *) (prefix+"script.js").c_str();
+    styledir = (char *) (prefix+"styles/").c_str();
+    certdir = (char *) (prefix+"certificates/").c_str();
+    cachedir = (char *) (prefix+"cache/").c_str();
+    cookiefile = (char *) (prefix+"cookies.txt").c_str();
+
     setup(name);
 }
 
