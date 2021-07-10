@@ -3,15 +3,12 @@
 
 int main(int argc, char *argv[]) 
 {
-    PApplication a("positron_scratchpad");
+    PApplication app("positron_scratchpad");
 
-    PView v1(&a, "view1");
-    v1.load("https://www.google.com");
+    PView view1(&app, "view1");
+    view1.load("./index.html");
 
-    //PView v2(&a, "view2");
-    //v2.load("https://www.duckduckgo.com");
-
-    a.run();
+    app.run();
 
     return 0;
 }

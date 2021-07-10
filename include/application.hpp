@@ -1,5 +1,5 @@
-#ifndef __DRIVER_H
-#define __DRIVER_H
+#ifndef __APPLICATION_HPP
+#define __APPLICATION_HPP
 
 #include "../surf/surf.h"
 
@@ -26,8 +26,9 @@ class PView {
 public:
     PView(PApplication *app, 
             const char *title, 
-            PDims dims=PDims(250, 128));
-
+            PDims dims=PDims(250, 128)); 
+            // TODO are these defaults sane?
+            
     PView(PApplication *app, PDims dims=PDims(250, 128))
         : PView(app, app->name, dims) {}
 
