@@ -3,13 +3,13 @@
 
 int main(int argc, char *argv[]) 
 {
-    PApplication a("hewo");
+    PApplication a("positron_scratchpad");
 
     PView v1(&a, "view1");
     v1.load("https://www.google.com");
 
-    PView v2(&a, "view2");
-    v2.load("https://www.duckduckgo.com");
+    //PView v2(&a, "view2");
+    //v2.load("https://www.duckduckgo.com");
 
     a.run();
 

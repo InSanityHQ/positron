@@ -5,16 +5,25 @@
 PApplication::PApplication(const char *name) 
     : name(name) 
 {
-    // TODO BAD(ish)! non unix-like?
+    // TODO BAD(ish)! whatabout non unix-like?
     std::string prefix = "~/."+std::string(name)+"/";
 
-    scriptfile = (char *) (prefix+"script.js").c_str();
-    styledir = (char *) (prefix+"styles/").c_str();
-    certdir = (char *) (prefix+"certificates/").c_str();
-    cachedir = (char *) (prefix+"cache/").c_str();
-    cookiefile = (char *) (prefix+"cookies.txt").c_str();
+    // TODO BAD! Language abuse and noob soydev move
+    std::string scriptfile = (prefix+"script.js");
+    std::string styledir = (prefix+"styles/");
+    std::string certdir = (prefix+"certificates/");
+    std::string cachedir = (prefix+"cache/");
+    std::string cookiefile = (prefix+"cookies.txt");
 
-    setup(name);
+    const StorePaths sp = {
+        scriptfile.c_str(), 
+        styledir.c_str(),
+        certdir.c_str(), 
+        cachedir.c_str(),
+        cookiefile.c_str()
+    };
+
+    setup(name, &sp);
 }
 
 PApplication::~PApplication() 

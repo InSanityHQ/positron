@@ -43,6 +43,5 @@ add_executable(positron_scratchpad
     scratchpad.cpp)
 
 target_link_libraries(positron_scratchpad 
-    positron
-    surf)
+    positron)
 
