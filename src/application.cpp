@@ -56,3 +56,13 @@ void PView::updatetitle(const char *url)
     ::updatetitle(client, url);
 }
 
+void PView::toggleInspector() 
+{
+    toggleinspector(client);
+}
+
+void PView::kill() 
+{
+    gtk_window_close(GTK_WINDOW(client->win));
+}
+

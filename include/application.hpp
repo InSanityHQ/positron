@@ -34,6 +34,7 @@ public:
 
     void load(const char *url);
     void updatetitle(const char *title);
+    void toggleInspector();
     void kill();
 
 private:
